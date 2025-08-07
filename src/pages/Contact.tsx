@@ -11,6 +11,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -22,15 +23,44 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setSubmitted(true);
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    
-    setTimeout(() => setSubmitted(false), 3000);
+    try {
+      
+      const formPayload = {
+        access_key: 'b2766147-051a-42b3-9407-e191722c3289', 
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        from_name: 'Portfolio Contact Form',
+        to: 'girish792004@gmail.com' // Your email where you want to receive messages
+      };
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formPayload)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (err) {
+      setError('Failed to send message. Please try again or contact me directly.');
+      console.error('Form submission error:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -59,7 +89,7 @@ const Contact = () => {
       icon: <Github className="h-6 w-6" />,
       label: 'GitHub',
       href: 'https://github.com/Girishs07',
-      color: 'hover:text-black-400'
+      color: 'hover:text-gray-400'
     },
     {
       icon: <Linkedin className="h-6 w-6" />,
@@ -74,6 +104,11 @@ const Contact = () => {
       color: 'hover:text-red-400'
     }
   ];
+
+  // Handle LinkedIn messaging redirect
+  const handleLinkedInMessage = () => {
+    window.open('https://www.linkedin.com/in/girishsureshkannan/', '_blank');
+  };
 
   return (
     <motion.div
@@ -111,13 +146,27 @@ const Contact = () => {
             <div className="bg-charcoal rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-white-smoke mb-6">Send a Message</h2>
               
+              {/* Success Message */}
               {submitted && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg"
                 >
-                  <p className="text-green-400 font-medium">Thank you! Your message has been sent.</p>
+                  <p className="text-green-400 font-medium">
+                    ✅ Thank you! Your message has been sent successfully. I'll get back to you soon!
+                  </p>
+                </motion.div>
+              )}
+
+              {/* Error Message */}
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-lg"
+                >
+                  <p className="text-red-400 font-medium">❌ {error}</p>
                 </motion.div>
               )}
 
@@ -205,6 +254,20 @@ const Contact = () => {
                   )}
                 </button>
               </form>
+
+              {/* LinkedIn Alternative */}
+              <div className="mt-8 pt-8 border-t border-gray/20">
+                <p className="text-gray text-sm mb-4 text-center">
+                  Prefer LinkedIn? Connect with me directly:
+                </p>
+                <button
+                  onClick={handleLinkedInMessage}
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-charcoal transition-all flex items-center justify-center gap-2"
+                >
+                  <Linkedin size={20} />
+                  Message on LinkedIn
+                </button>
+              </div>
             </div>
           </motion.div>
 
