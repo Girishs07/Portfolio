@@ -191,6 +191,34 @@ const About = () => {
             
             {/* Experience Widget */}
             <ExperienceWidget />
+
+            {/* Languages Section - Moved here */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-charcoal rounded-2xl p-6"
+            >
+              <div className="flex items-center space-x-2 mb-4">
+                <Globe className="h-5 w-5 text-gold" />
+                <h4 className="text-lg font-semibold text-gold">Languages</h4>
+              </div>
+              <div className="grid grid-cols-1 gap-2">
+                <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
+                  <span className="text-white-smoke font-medium">English</span>
+                  <span className="text-gold text-sm">Professional working proficiency</span>
+                </div>
+                <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
+                  <span className="text-white-smoke font-medium">Tamil</span>
+                  <span className="text-gold text-sm">Native or bilingual proficiency</span>
+                </div>
+                <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
+                  <span className="text-white-smoke font-medium">Hindi</span>
+                  <span className="text-gold text-sm">Elementary proficiency</span>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -251,34 +279,6 @@ const About = () => {
                     <p className="text-green-400 text-sm font-medium">Little Flower Convent HR SEC School</p>
                     <p className="text-gray text-sm">May 2019 - Mar 2020 • Grade: 70%</p>
                     <p className="text-gray text-xs mt-1">General Studies</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Languages Section */}
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="mb-6"
-              >
-                <div className="flex items-center space-x-2 mb-3">
-                  <Globe className="h-5 w-5 text-gold" />
-                  <h4 className="text-lg font-semibold text-gold">Languages</h4>
-                </div>
-                <div className="grid grid-cols-1 gap-2">
-                  <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
-                    <span className="text-white-smoke font-medium">English</span>
-                    <span className="text-gold text-sm">Professional working proficiency</span>
-                  </div>
-                  <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
-                    <span className="text-white-smoke font-medium">Tamil</span>
-                    <span className="text-gold text-sm">Native or bilingual proficiency</span>
-                  </div>
-                  <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
-                    <span className="text-white-smoke font-medium">Hindi</span>
-                    <span className="text-gold text-sm">Elementary proficiency</span>
                   </div>
                 </div>
               </motion.div>
