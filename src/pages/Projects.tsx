@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Calendar, Users, TrendingUp } from 'lucide-react';
+import { Github } from 'lucide-react';
 import pdfExtractorImg from './pdf-extrator.png';
 import n8nInfluencerImg from './N8N.png';
 import signalMinerImg from './Signal Miner.png';
