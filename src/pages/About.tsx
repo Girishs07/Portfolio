@@ -10,7 +10,7 @@ const About = () => {
     { name: 'SQL', level: 80 },
     { name: 'EXCEL', level: 80 },
     { name: 'POWER BI', level: 85 },
-    { name: 'AWS', level: 75 },
+    { name: 'Data Science', level: 75 },
   ];
 
   const achievements = [
@@ -88,7 +88,8 @@ const About = () => {
             <div>
               <h3 className="text-2xl font-bold text-white-smoke mb-4">My Journey</h3>
               <p className="text-gray leading-relaxed mb-4">
-              ✨ My journey began with a love for solving puzzles and understanding how things work. In college, I discovered data science and realized how powerful data can be in telling stories and driving decisions. I completed a degree in Computer Science, took online courses in machine learning and SQL, and gained hands-on experience through two internships where I helped analyze customer data and build dashboards.
+              Hi, I’m Girish S – a passionate Data Analyst and AI Enthusiast with experience in data visualization, ETL workflows, and AI-driven projects. I’ve also explored full-stack development (MERN) through internships and hands-on projects.
+              My goal is to build intelligent, data-driven solutions and grow into the Data Science & AI domain, eventually leading my own company in this field.
               </p>
               <p className="text-gray leading-relaxed">
               🛠️ I built a sales analytics dashboard that helped a small business track their KPIs and developed a Python app that automates expense tracking from bank statements.I’m currently focused on building robust analytics pipelines and visualizations, with the aspiration to help organizations make smarter, data-driven decisions.
