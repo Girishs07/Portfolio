@@ -1,7 +1,118 @@
 import { motion } from 'framer-motion';
-import { Code, TrendingUp, Award, BookOpen, Users } from 'lucide-react';
+import { Code, TrendingUp, Award, BookOpen, Users, Building, Calendar, MapPin } from 'lucide-react';
 import SkillChart from '../components/SkillChart';
 
+// Experience Widget Component
+const ExperienceWidget = () => {
+  const experiences = [
+    {
+      company: "Syncner",
+      duration: "7 mos",
+      type: "Hybrid",
+      positions: [
+        {
+          title: "Data Engineer/Data Analyst",
+          type: "Internship",
+          period: "Jul 2025 - Present • 2 mos",
+          location: "Coimbatore South, Tamil Nadu, India",
+          skills: ["Project Management", "Asana", "+1 skill"]
+        },
+        {
+          title: "Business Data Analyst",
+          type: "Trainee",
+          period: "Feb 2025 - Jul 2025 • 6 mos",
+          location: "Coimbatore, Tamil Nadu, India",
+          skills: ["Notion Productivity Software", "Google Sheets", "+3 skills"]
+        }
+      ]
+    }
+  ];
+
+  return (
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="bg-charcoal rounded-2xl p-6 w-full"
+    >
+      {experiences.map((exp, expIndex) => (
+        <div key={expIndex} className="space-y-4">
+          {/* Company Header */}
+          <div className="flex items-start space-x-3">
+            <div className="bg-blue-500 rounded-lg p-2 flex-shrink-0">
+              <Building className="h-5 w-5 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-white-smoke">{exp.company}</h3>
+              <div className="flex items-center space-x-4 text-sm text-gray">
+                <span className="flex items-center space-x-1">
+                  <Calendar className="h-4 w-4" />
+                  <span>{exp.duration}</span>
+                </span>
+                <span className="text-gold">{exp.type}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Positions */}
+          <div className="ml-8 space-y-6">
+            {exp.positions.map((position, posIndex) => (
+              <motion.div
+                key={posIndex}
+                initial={{ x: -20, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: posIndex * 0.1 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                {/* Timeline dot */}
+                <div className="absolute -left-6 top-2 w-3 h-3 bg-gold rounded-full border-2 border-charcoal"></div>
+                
+                {/* Position content */}
+                <div className="space-y-2">
+                  <div>
+                    <h4 className="text-white-smoke font-semibold text-base">
+                      {position.title}
+                    </h4>
+                    <p className="text-gold text-sm font-medium">{position.type}</p>
+                  </div>
+                  
+                  <p className="text-gray text-sm">{position.period}</p>
+                  
+                  <div className="flex items-center space-x-1 text-gray text-sm">
+                    <MapPin className="h-4 w-4" />
+                    <span>{position.location}</span>
+                  </div>
+                  
+                  {/* Skills */}
+                  <div className="flex items-start space-x-2 mt-3">
+                    <Award className="h-4 w-4 text-gold mt-0.5 flex-shrink-0" />
+                    <div className="flex flex-wrap gap-1">
+                      {position.skills.map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="text-xs px-2 py-1 bg-gold/20 text-gold rounded-full"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Timeline line */}
+                {posIndex < exp.positions.length - 1 && (
+                  <div className="absolute -left-5 top-8 w-0.5 h-12 bg-gray/30"></div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </motion.div>
+  );
+};
 
 const About = () => {
   const skills = [
@@ -55,13 +166,14 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* Story Section */}
+        {/* Story Section with Experience Widget */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="space-y-8"
           >
             <div className="bg-charcoal rounded-2xl p-8">
               <img
@@ -76,6 +188,9 @@ const About = () => {
                 Fresher Looking For The Data Science Role.
               </p>
             </div>
+            
+            {/* Experience Widget */}
+            <ExperienceWidget />
           </motion.div>
 
           <motion.div
@@ -88,12 +203,11 @@ const About = () => {
             <div>
               <h3 className="text-2xl font-bold text-white-smoke mb-4">My Journey</h3>
               <p className="text-gray leading-relaxed mb-4">
-              Hi, I’m Girish S – a passionate Data Analyst and AI Enthusiast with experience in data visualization, ETL workflows, and AI-driven projects. I’ve also explored full-stack development (MERN) through internships and hands-on projects.
+              Hi, I'm Girish S – a passionate Data Analyst and AI Enthusiast with experience in data visualization, ETL workflows, and AI-driven projects. I've also explored full-stack development (MERN) through internships and hands-on projects.
               My goal is to build intelligent, data-driven solutions and grow into the Data Science & AI domain, eventually leading my own company in this field.
               </p>
               <p className="text-gray leading-relaxed">
-              🛠️ I built a sales analytics dashboard that helped a small business track their KPIs and developed a Python app that automates expense tracking from bank statements.I’m currently focused on building robust analytics pipelines and visualizations, with the aspiration to help organizations make smarter, data-driven decisions.
-                
+              
               </p>
             </div>
 
