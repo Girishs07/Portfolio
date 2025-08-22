@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code, TrendingUp, Award, BookOpen, Users, Building, Calendar, MapPin } from 'lucide-react';
+import { Code, TrendingUp, Award, BookOpen, Users, Building, Calendar, MapPin, GraduationCap, Globe } from 'lucide-react';
 import SkillChart from '../components/SkillChart';
 
 // Experience Widget Component
@@ -202,13 +202,86 @@ const About = () => {
           >
             <div>
               <h3 className="text-2xl font-bold text-white-smoke mb-4">My Journey</h3>
-              <p className="text-gray leading-relaxed mb-4">
-              Hi, I'm Girish S – a passionate Data Analyst and AI Enthusiast with experience in data visualization, ETL workflows, and AI-driven projects. I've also explored full-stack development (MERN) through internships and hands-on projects.
-              My goal is to build intelligent, data-driven solutions and grow into the Data Science & AI domain, eventually leading my own company in this field.
+              <p className="text-gray leading-relaxed mb-6">
+                Hi, I'm Girish S – a passionate Data Analyst and AI Enthusiast with experience in data visualization, ETL workflows, and AI-driven projects. I've also explored full-stack development (MERN) through internships and hands-on projects.
+                My goal is to build intelligent, data-driven solutions and grow into the Data Science & AI domain, eventually leading my own company in this field.
               </p>
-              <p className="text-gray leading-relaxed">
               
-              </p>
+              {/* Education Section */}
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="mb-6"
+              >
+                <div className="flex items-center space-x-2 mb-3">
+                  <GraduationCap className="h-5 w-5 text-gold" />
+                  <h4 className="text-lg font-semibold text-gold">Education</h4>
+                </div>
+                <div className="space-y-3">
+                  <div className="bg-charcoal/50 rounded-lg p-4 border-l-4 border-gold/50">
+                    <h5 className="text-white-smoke font-medium">B.Tech, Artificial Intelligence & Data Science</h5>
+                    <p className="text-gold text-sm font-medium">SNS Institutions</p>
+                    <p className="text-gray text-sm">Nov 2022 - May 2026</p>
+                    <div className="flex flex-wrap gap-1 mt-2">
+                      <span className="text-xs px-2 py-1 bg-gold/20 text-gold rounded-full">Microsoft Office</span>
+                      <span className="text-xs px-2 py-1 bg-gold/20 text-gold rounded-full">Decision-Making</span>
+                      <span className="text-xs px-2 py-1 bg-gold/20 text-gold rounded-full">Design Thinking</span>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-charcoal/50 rounded-lg p-4 border-l-4 border-blue-500/50">
+                    <h5 className="text-white-smoke font-medium">HSC (Higher Secondary Certificate)</h5>
+                    <p className="text-blue-400 text-sm font-medium">Little Flower Convent HR SEC School</p>
+                    <p className="text-gray text-sm">Mar 2020 - Feb 2022 • Grade: 83%</p>
+                    <p className="text-gray text-xs mt-1">Maths, Computer Science, Physics, Chemistry</p>
+                    <div className="mt-2">
+                      <p className="text-gray text-xs">🏀 District Winner in Basketball • Scout Member • Community Service</p>
+                      <div className="flex flex-wrap gap-1 mt-2">
+                        <span className="text-xs px-2 py-1 bg-blue-500/20 text-blue-400 rounded-full">Resilience & Discipline</span>
+                        <span className="text-xs px-2 py-1 bg-blue-500/20 text-blue-400 rounded-full">Team Collaboration</span>
+                        <span className="text-xs px-2 py-1 bg-blue-500/20 text-blue-400 rounded-full">Event Organization</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-charcoal/50 rounded-lg p-4 border-l-4 border-green-500/50">
+                    <h5 className="text-white-smoke font-medium">SSLC (Secondary School Leaving Certificate)</h5>
+                    <p className="text-green-400 text-sm font-medium">Little Flower Convent HR SEC School</p>
+                    <p className="text-gray text-sm">May 2019 - Mar 2020 • Grade: 70%</p>
+                    <p className="text-gray text-xs mt-1">General Studies</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Languages Section */}
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="mb-6"
+              >
+                <div className="flex items-center space-x-2 mb-3">
+                  <Globe className="h-5 w-5 text-gold" />
+                  <h4 className="text-lg font-semibold text-gold">Languages</h4>
+                </div>
+                <div className="grid grid-cols-1 gap-2">
+                  <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
+                    <span className="text-white-smoke font-medium">English</span>
+                    <span className="text-gold text-sm">Professional working proficiency</span>
+                  </div>
+                  <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
+                    <span className="text-white-smoke font-medium">Tamil</span>
+                    <span className="text-gold text-sm">Native or bilingual proficiency</span>
+                  </div>
+                  <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
+                    <span className="text-white-smoke font-medium">Hindi</span>
+                    <span className="text-gold text-sm">Elementary proficiency</span>
+                  </div>
+                </div>
+              </motion.div>
             </div>
 
             <div className="flex items-start space-x-4">
