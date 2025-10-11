@@ -12,8 +12,8 @@ const ExperienceWidget = () => {
       positions: [
         {
           title: "Data Engineer/Data Analyst",
-          type: "Internship",
-          period: "Jul 2025 - Present • 2 mos",
+          type: "Intern",
+          period: "Jul 2025 - Present • 4 mos",
           location: "Coimbatore South, Tamil Nadu, India",
           skills: ["Project Management", "Asana", "+1 skill"]
         },
