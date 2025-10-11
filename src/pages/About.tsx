@@ -7,7 +7,7 @@ const ExperienceWidget = () => {
   const experiences = [
     {
       company: "Syncner",
-      duration: "7 mos",
+      duration: " 9 mos",
       type: "Hybrid",
       positions: [
         {
