@@ -13,7 +13,7 @@ const ExperienceWidget = () => {
         {
           title: "Data Engineer/Data Analyst",
           type: "Intern",
-          period: "Jul 2025 - Present • 4 mos",
+          period: "Jul 2025 - Jan 2026",
           location: "Coimbatore South, Tamil Nadu, India",
           skills: ["Project Management", "Asana", "+1 skill"]
         },
@@ -251,7 +251,7 @@ const About = () => {
                   <div className="bg-charcoal/50 rounded-lg p-4 border-l-4 border-gold/50">
                     <h5 className="text-white-smoke font-medium">B.Tech, Artificial Intelligence & Data Science</h5>
                     <p className="text-gold text-sm font-medium">SNS Institutions</p>
-                    <p className="text-gray text-sm">Nov 2022 - May 2026</p>
+                    <p className="text-gray text-sm">Nov 2022 - April 2026</p>
                     <div className="flex flex-wrap gap-1 mt-2">
                       <span className="text-xs px-2 py-1 bg-gold/20 text-gold rounded-full">Microsoft Office</span>
                       <span className="text-xs px-2 py-1 bg-gold/20 text-gold rounded-full">Decision-Making</span>
@@ -262,7 +262,7 @@ const About = () => {
                   <div className="bg-charcoal/50 rounded-lg p-4 border-l-4 border-blue-500/50">
                     <h5 className="text-white-smoke font-medium">HSC (Higher Secondary Certificate)</h5>
                     <p className="text-blue-400 text-sm font-medium">Little Flower Convent HR SEC School</p>
-                    <p className="text-gray text-sm">Mar 2020 - Feb 2022 • Grade: 83%</p>
+                    <p className="text-gray text-sm">Mar 2020 - Feb 2022 • Grade: 80.33%</p>
                     <p className="text-gray text-xs mt-1">Maths, Computer Science, Physics, Chemistry</p>
                     <div className="mt-2">
                       <p className="text-gray text-xs">🏀 District Winner in Basketball • Scout Member • Community Service</p>
@@ -277,7 +277,7 @@ const About = () => {
                   <div className="bg-charcoal/50 rounded-lg p-4 border-l-4 border-green-500/50">
                     <h5 className="text-white-smoke font-medium">SSLC (Secondary School Leaving Certificate)</h5>
                     <p className="text-green-400 text-sm font-medium">Little Flower Convent HR SEC School</p>
-                    <p className="text-gray text-sm">May 2019 - Mar 2020 • Grade: 70%</p>
+                    <p className="text-gray text-sm">May 2019 - Mar 2020 • Grade: 69.8%</p>
                     <p className="text-gray text-xs mt-1">General Studies</p>
                   </div>
                 </div>
