@@ -350,7 +350,7 @@ const Contact = () => {
                 Get a comprehensive overview of my experience, skills, and achievements.
               </p>
               <a
-                href="/Girish -Associate Product Engineer.pdf"
+                href="/Girish_Resume.pdf"
                 download
                 className="inline-flex items-center px-6 py-3 bg-gold text-navy font-semibold rounded-lg hover:bg-gold/90 transition-all duration-300 hover:scale-105"
               >
