@@ -126,10 +126,10 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white-smoke mb-6">
+          <h1 className="mb-6 text-4xl font-bold text-white-smoke sm:text-5xl md:text-6xl">
             Get In <span className="text-gold">Touch</span>
           </h1>
-          <p className="text-xl text-gray max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-lg text-gray sm:text-xl">
             Let's discuss how we can work together to solve your data challenges 
             and unlock valuable insights for your business.
           </p>
@@ -143,7 +143,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-charcoal rounded-2xl p-8">
+            <div className="rounded-2xl bg-charcoal p-5 sm:p-8">
               <h2 className="text-2xl font-bold text-white-smoke mb-6">Send a Message</h2>
               
               {/* Success Message */}
@@ -280,7 +280,7 @@ const Contact = () => {
             className="space-y-8"
           >
             {/* Contact Information */}
-            <div className="bg-charcoal rounded-2xl p-8">
+            <div className="rounded-2xl bg-charcoal p-5 sm:p-8">
               <h3 className="text-2xl font-bold text-white-smoke mb-6">Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
@@ -300,12 +300,12 @@ const Contact = () => {
                       {info.href ? (
                         <a
                           href={info.href}
-                          className="text-white-smoke hover:text-gold transition-colors"
+                          className="break-all text-white-smoke transition-colors hover:text-gold"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-white-smoke">{info.value}</p>
+                        <p className="break-words text-white-smoke">{info.value}</p>
                       )}
                     </div>
                   </motion.div>
@@ -314,7 +314,7 @@ const Contact = () => {
             </div>
 
             {/* Social Links */}
-            <div className="bg-charcoal rounded-2xl p-8">
+            <div className="rounded-2xl bg-charcoal p-5 sm:p-8">
               <h3 className="text-2xl font-bold text-white-smoke mb-6">Connect With Me</h3>
               <div className="grid grid-cols-3 gap-4">
                 {socialLinks.map((social, index) => (

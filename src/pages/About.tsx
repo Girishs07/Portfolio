@@ -45,7 +45,7 @@ const ExperienceWidget = () => {
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-bold text-white-smoke">{exp.company}</h3>
-              <div className="flex items-center space-x-4 text-sm text-gray">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray">
                 <span className="flex items-center space-x-1">
                   <Calendar className="h-4 w-4" />
                   <span>{exp.duration}</span>
@@ -80,9 +80,9 @@ const ExperienceWidget = () => {
                   
                   <p className="text-gray text-sm">{position.period}</p>
                   
-                  <div className="flex items-center space-x-1 text-gray text-sm">
+                  <div className="flex items-start space-x-1 text-sm text-gray">
                     <MapPin className="h-4 w-4" />
-                    <span>{position.location}</span>
+                    <span className="break-words">{position.location}</span>
                   </div>
                   
                   {/* Skills */}
@@ -158,10 +158,10 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white-smoke mb-6">
+          <h1 className="mb-6 text-4xl font-bold text-white-smoke sm:text-5xl md:text-6xl">
             About <span className="text-gold">Me</span>
           </h1>
-          <p className="text-xl text-gray max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-lg text-gray sm:text-xl">
             Passionate about uncovering stories hidden in data and building intelligent systems that make a difference.
           </p>
         </motion.div>
@@ -175,11 +175,11 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="bg-charcoal rounded-2xl p-8">
+            <div className="rounded-2xl bg-charcoal p-5 sm:p-8">
               <img
                 src="/My ChatGPT image.png"
                 alt="Girish S"
-                className="w-48 h-48 rounded-full mx-auto mb-6 object-cover"
+                className="mx-auto mb-6 h-40 w-40 rounded-full object-cover sm:h-48 sm:w-48"
               />
               <h2 className="text-2xl font-bold text-white-smoke text-center mb-4">
                 Data Science Professional
@@ -205,15 +205,15 @@ const About = () => {
                 <h4 className="text-lg font-semibold text-gold">Languages</h4>
               </div>
               <div className="grid grid-cols-1 gap-2">
-                <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
+                <div className="flex flex-col items-start justify-between gap-1 rounded-lg bg-charcoal/50 p-3 sm:flex-row sm:items-center">
                   <span className="text-white-smoke font-medium">English</span>
                   <span className="text-gold text-sm">Professional working proficiency</span>
                 </div>
-                <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
+                <div className="flex flex-col items-start justify-between gap-1 rounded-lg bg-charcoal/50 p-3 sm:flex-row sm:items-center">
                   <span className="text-white-smoke font-medium">Tamil</span>
                   <span className="text-gold text-sm">Native or bilingual proficiency</span>
                 </div>
-                <div className="bg-charcoal/50 rounded-lg p-3 flex justify-between items-center">
+                <div className="flex flex-col items-start justify-between gap-1 rounded-lg bg-charcoal/50 p-3 sm:flex-row sm:items-center">
                   <span className="text-white-smoke font-medium">Hindi</span>
                   <span className="text-gold text-sm">Elementary proficiency</span>
                 </div>

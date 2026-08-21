@@ -21,7 +21,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="bg-charcoal rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        className="max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-2xl bg-charcoal"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -29,7 +29,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-64 object-cover rounded-t-2xl"
+            className="h-48 w-full rounded-t-2xl object-cover sm:h-64"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal to-transparent rounded-t-2xl" />
           <button
@@ -39,14 +39,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             <X size={20} />
           </button>
           <div className="absolute bottom-6 left-6 right-6">
-            <h2 className="text-3xl font-bold text-white-smoke mb-2">{project.title}</h2>
-            <p className="text-gold text-lg">{project.subtitle}</p>
+            <h2 className="mb-2 break-words text-2xl font-bold text-white-smoke sm:text-3xl">{project.title}</h2>
+            <p className="break-words text-base text-gold sm:text-lg">{project.subtitle}</p>
           </div>
         </div>
 
-        <div className="p-8">
+        <div className="p-5 sm:p-8">
           {/* Metrics */}
-          <div className="grid grid-cols-3 gap-6 mb-8">
+          <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-6">
             <div className="text-center p-4 bg-navy/50 rounded-xl">
               <TrendingUp className="h-8 w-8 text-gold mx-auto mb-2" />
               <p className="text-gray text-sm">Accuracy</p>

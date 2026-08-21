@@ -28,7 +28,7 @@ const SkillChart = () => {
     <div className="bg-charcoal rounded-xl p-6">
       <h4 className="text-xl font-semibold text-gold mb-6 text-center">Skill Radar</h4>
       <div className="flex justify-center">
-        <svg width="300" height="300" className="overflow-visible">
+        <svg viewBox="0 0 300 300" width="300" height="300" className="h-auto w-full max-w-[300px] overflow-visible">
           {/* Grid lines */}
           {[20, 40, 60, 80, 100].map((value) => (
             <polygon

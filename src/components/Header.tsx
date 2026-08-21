@@ -16,6 +16,10 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -34,9 +38,9 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <BarChart3 className="h-8 w-8 text-gold" />
-            <span className="text-white-smoke font-semibold text-xl">Girish S</span>
+          <Link to="/" className="flex min-w-0 items-center space-x-2">
+            <BarChart3 className="h-7 w-7 flex-shrink-0 text-gold sm:h-8 sm:w-8" />
+            <span className="truncate text-lg font-semibold text-white-smoke sm:text-xl">Girish S</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -58,7 +62,8 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white-smoke"
+            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            className="rounded p-2 text-white-smoke md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -71,7 +76,7 @@ const Header = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden bg-navy border-t border-gray/20"
+            className="border-t border-gray/20 bg-navy md:hidden"
           >
             <nav className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (

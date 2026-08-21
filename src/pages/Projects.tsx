@@ -72,10 +72,10 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white-smoke mb-6">
+          <h1 className="mb-6 text-4xl font-bold text-white-smoke sm:text-5xl md:text-6xl">
             My <span className="text-gold">Projects</span>
           </h1>
-          <p className="text-xl text-gray max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-lg text-gray sm:text-xl">
           A curated collection of projects showcasing my skills in data science, machine learning, and analytics to solve real-world problems across industries.
           </p>
         </motion.div>
@@ -100,12 +100,12 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl font-bold text-white-smoke mb-1">{project.title}</h3>
-                  <p className="text-gold text-sm">{project.subtitle}</p>
+                  <h3 className="mb-1 break-words text-xl font-bold text-white-smoke">{project.title}</h3>
+                  <p className="break-words text-sm text-gold">{project.subtitle}</p>
                 </div>
               </div>
 
-              <div className="p-6">
+              <div className="p-5 sm:p-6">
                 <p className="text-gray mb-4">{project.description}</p>
 
                 {/* Tech Stack */}

@@ -24,13 +24,13 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-6"
             >
-              <h1 className="text-5xl md:text-7xl font-bold text-white-smoke mb-4">
+              <h1 className="mb-4 text-4xl font-bold text-white-smoke sm:text-5xl md:text-7xl">
                 Girish  <span className="text-gold">Data Professional</span>
               </h1>
-              <div className="flex items-center justify-center space-x-4 text-gray">
-                <TrendingUp className="h-6 w-6" />
-                <span className="text-xl md:text-2xl">Data Science</span>
-                <Database className="h-6 w-6" />
+              <div className="flex items-center justify-center gap-3 text-gray sm:gap-4">
+                <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6" />
+                <span className="text-lg sm:text-xl md:text-2xl">Data Science</span>
+                <Database className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
             </motion.div>
 
@@ -38,7 +38,7 @@ const Home = () => {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray max-w-3xl mx-auto mb-8 leading-relaxed"
+              className="mx-auto mb-8 max-w-3xl text-lg leading-relaxed text-gray sm:text-xl md:text-2xl"
             >
               Transforming complex data into actionable insights that drive business growth. 
               Specializing in machine learning, statistical analysis, and data visualization.
@@ -53,7 +53,7 @@ const Home = () => {
               <a
                 href="/Girish -Associate Product Engineer.pdf"
                 download
-                className="inline-flex items-center px-8 py-4 bg-gold text-navy font-semibold rounded-lg hover:bg-gold/90 transition-all duration-300 hover:scale-105 shadow-lg"
+                className="inline-flex w-full items-center justify-center rounded-lg bg-gold px-6 py-3 font-semibold text-navy shadow-lg transition-all duration-300 hover:scale-105 hover:bg-gold/90 sm:w-auto sm:px-8 sm:py-4"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
@@ -61,7 +61,7 @@ const Home = () => {
               
               <Link
                 to="/projects"
-                className="inline-flex items-center px-8 py-4 border-2 border-gold text-gold font-semibold rounded-lg hover:bg-gold hover:text-navy transition-all duration-300 hover:scale-105"
+                className="inline-flex w-full items-center justify-center rounded-lg border-2 border-gold px-6 py-3 font-semibold text-gold transition-all duration-300 hover:scale-105 hover:bg-gold hover:text-navy sm:w-auto sm:px-8 sm:py-4"
               >
                 See My Work
                 <ArrowRight className="ml-2 h-5 w-5" />
